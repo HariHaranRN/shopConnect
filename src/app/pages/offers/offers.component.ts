@@ -1,10 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import * as $ from "jquery";
-import "bootstrap";
-import { FormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { NgClass } from "@angular/common";
 
 @Component({
   selector: "app-offers",
