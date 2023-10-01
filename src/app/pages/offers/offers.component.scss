@@ -16,7 +16,7 @@
     cursor: pointer;
     font-size: 34px;
     transition: transform 0.2s ease;
-    color: #f74e70; /* Icon color */
+    color: #734376c4; /* Icon color */
   }
   
   .share-icon:hover {
@@ -28,10 +28,11 @@
   }
   
   .custom-button {
-    background-color: #f74e70 !important;
-    border-color: #f74e70;
+    background-color: #734376c4 !important;
+    border-color: #734376c4;
     color: white; /* Optional: Set text color */
+    border-radius: 5px;
   }
   .modal-body{
-    border: "2px solid #f74e70 " ;
+    border: "2px solid #734376c4 " ;
   }

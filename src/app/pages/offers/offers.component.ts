@@ -96,7 +96,7 @@ export class OffersComponent implements OnInit {
       <div class="d-flex justify-content-end" style="padding:5px">
         <button
           type="button"
-          class="btn custom-button"
+          class="btn-simple custom-button"
           (click)="activeModal.close('Close click')"
           height="5px"
         >

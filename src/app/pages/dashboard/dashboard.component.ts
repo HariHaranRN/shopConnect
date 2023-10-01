@@ -80,9 +80,9 @@ export class DashboardComponent implements OnInit {
 
     var gradientStroke = this.ctx.createLinearGradient(0, 230, 0, 50);
 
-    gradientStroke.addColorStop(1, 'rgba(233,32,16,0.2)');
-    gradientStroke.addColorStop(0.4, 'rgba(233,32,16,0.0)');
-    gradientStroke.addColorStop(0, 'rgba(233,32,16,0)');
+    gradientStroke.addColorStop(1, 'rgba(113,66,116,0.3)');
+    gradientStroke.addColorStop(0.4, 'rgba(113,66,116,0.1)');
+    gradientStroke.addColorStop(0, 'rgba(113,66,116,0)');
 
     var config = {
       type: 'line',
@@ -92,13 +92,13 @@ export class DashboardComponent implements OnInit {
           label: "count",
           fill: true,
           backgroundColor: gradientStroke,
-          borderColor: '#ec250d',
+          borderColor: '#734376c4',
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          pointBackgroundColor: '#ec250d',
+          pointBackgroundColor: '#734376c4',
           pointBorderColor: 'rgba(255,255,255,0)',
-          pointHoverBackgroundColor: '#ec250d',
+          pointHoverBackgroundColor: '#734376c4',
           pointBorderWidth: 20,
           pointHoverRadius: 4,
           pointHoverBorderWidth: 15,

@@ -5,10 +5,14 @@ import { Component, OnInit } from "@angular/core";
 })
 export class UserComponent implements OnInit {
 
-  public formDisableSwap = false
+  formDisableSwap: boolean = true;
   constructor() {}
 
   ngOnInit() {
+  }
+
+  toggleForm(){
+    this.formDisableSwap = !this.formDisableSwap
   }
 }
 
