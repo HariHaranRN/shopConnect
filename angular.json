@@ -67,27 +67,16 @@
               ]
             },
             "development": {
+              "buildOptimizer": false,
               "optimization": {
-                "scripts": true,
-                "styles": {
-                  "minify": false,
-                  "inlineCritical": false
-                },
-                "fonts": true
+                "scripts": false,
+                "styles": false,
+                "fonts": false
               },
-              "outputHashing": "all",
+              "vendorChunk": true,
+              "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
+              "namedChunks": true
             }
           }
         },
