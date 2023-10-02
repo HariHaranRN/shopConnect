@@ -13,6 +13,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
 import { CommonModule } from "@angular/common";
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { CommonModule } from "@angular/common";
     RouterModule,
     AppRoutingModule,
     ToastrModule.forRoot(),
+    NgxSpinnerModule
   ],
   declarations: [AppComponent, AdminLayoutComponent],
   providers: [],

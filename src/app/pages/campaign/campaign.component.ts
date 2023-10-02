@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from "ngx-spinner";
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
@@ -8,12 +9,13 @@ import { ApiService } from 'src/app/service/api.service';
 })
 export class CampaignComponent implements OnInit {
 
-  constructor(private service: ApiService) { }
+  constructor(private service: ApiService, private spinner: NgxSpinnerService) { }
 
 
   cards: any[];
 
   repost(post){
+    this.spinner.show()
     const payload = {
       shopId: "32266d51-2691-4859-bab5-f6a7245390ba",
       title: post.title,
@@ -23,10 +25,16 @@ export class CampaignComponent implements OnInit {
     }
     this.service.addPost(payload).subscribe((data)=> {
       console.log(data)
+      this.spinner.hide()
+    },
+    (error) => {
+      console.error('Error adding post:', error);
+      this.spinner.hide()
     })
   }
 
   ngOnInit(): void {
+    this.spinner.show()
     this.service.getCampaign().subscribe(
       (data: Array<any>) => {
         this.cards = data.map((item) => ({
@@ -34,9 +42,11 @@ export class CampaignComponent implements OnInit {
           title: item.title,
           content: item.description,
         }));
+        this.spinner.hide()
       },
       (error) => {
         console.error('Error fetching data from API:', error);
+        this.spinner.hide()
       }
     );
   }
