@@ -12,9 +12,12 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { ComponentsModule } from "./components/components.module";
+import { CommonModule } from "@angular/common";
+import { CampaignComponent } from './pages/campaign/campaign.component';
 
 @NgModule({
   imports: [
+    CommonModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,

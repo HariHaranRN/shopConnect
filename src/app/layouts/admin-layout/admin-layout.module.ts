@@ -8,6 +8,8 @@ import { AdminLayoutRoutes } from "./admin-layout.routing";
 import { DashboardComponent } from "../../pages/dashboard/dashboard.component";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { OffersComponent } from "src/app/pages/offers/offers.component";
+import { CampaignComponent } from "src/app/pages/campaign/campaign.component";
 
 @NgModule({
   imports: [
@@ -19,6 +21,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
   ],
   declarations: [
     DashboardComponent,
+    OffersComponent,
+    CampaignComponent
   ]
 })
 export class AdminLayoutModule {}
