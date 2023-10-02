@@ -1,6 +1,5 @@
 import { Component, OnInit, ElementRef, OnDestroy } from "@angular/core";
 import { ROUTES } from "../sidebar/sidebar.component";
-import { Location } from "@angular/common";
 import { Router } from "@angular/router";
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
@@ -11,7 +10,6 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   private listTitles: any[];
-  location: Location;
   mobile_menu_visible: any = 0;
   private toggleButton: any;
   private sidebarVisible: boolean;
@@ -21,12 +19,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   closeResult: string;
 
   constructor(
-    location: Location,
     private element: ElementRef,
     private router: Router,
     private modalService: NgbModal
   ) {
-    this.location = location;
     this.sidebarVisible = false;
   }
   // function that adds color white/transparent to the navbar on resize (this is for the collapse)
@@ -159,19 +155,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   }
 
-  getTitle() {
-    var titlee = this.location.prepareExternalUrl(this.location.path());
-    if (titlee.charAt(0) === "#") {
-      titlee = titlee.slice(1);
-    }
-
-    for (var item = 0; item < this.listTitles.length; item++) {
-      if (this.listTitles[item].path === titlee) {
-        return this.listTitles[item].title;
-      }
-    }
-    return "Dashboard";
-  }
 
   ngOnDestroy(){
      window.removeEventListener("resize", this.updateColor);

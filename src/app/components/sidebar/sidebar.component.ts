@@ -25,6 +25,12 @@ export const ROUTES: RouteInfo[] = [
     icon: "icon-pin",
     class: "" 
   },
+  {
+    path: "/shop",
+    title: "Shop",
+    icon: "icon-components",
+    class: "" 
+  },
 ];
 
 @Component({

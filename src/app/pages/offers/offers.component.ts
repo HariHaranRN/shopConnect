@@ -1,10 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import * as $ from "jquery";
-import "bootstrap";
-import { FormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
-import { NgClass } from "@angular/common";
 
 @Component({
   selector: "app-offers",
@@ -101,7 +96,7 @@ export class OffersComponent implements OnInit {
       <div class="d-flex justify-content-end" style="padding:5px">
         <button
           type="button"
-          class="btn custom-button"
+          class="btn-simple custom-button"
           (click)="activeModal.close('Close click')"
           height="5px"
         >

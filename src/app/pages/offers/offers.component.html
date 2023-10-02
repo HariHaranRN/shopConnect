@@ -1,4 +1,4 @@
-<div class="content mt-4">
+<div class="content mt-4" style="width: 90%;margin: auto;">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <input
@@ -9,7 +9,7 @@
       />
     </div>
     <div class="col-md-2">
-      <button class="btn custom-button" (click)="generateCards()">
+      <button class="btn-simple custom-button" (click)="generateCards()">
         Generate
       </button>
     </div>
@@ -30,7 +30,7 @@
           </h5>
           <p class="card-text">{{ card.content }}</p>
           <div class="d-flex justify-content-end">
-            <button class="btn custom-button" (click)="open()">Post</button>
+            <button class="btn-simple custom-button" (click)="open()">Post</button>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
   </div>
 
   <div class="row justify-content-center" *ngIf="cardsGenerated">
-      <button class="btn custom-button" (click)="generateCards()">Regenerate Response</button>
+      <button class="btn-simple custom-button" (click)="generateCards()">Regenerate Response</button>
   </div>
 </div>
 
