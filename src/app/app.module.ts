@@ -24,7 +24,7 @@ import { CommonModule } from "@angular/common";
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   declarations: [AppComponent, AdminLayoutComponent],
   providers: [],

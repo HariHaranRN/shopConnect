@@ -1,9 +1,9 @@
-<div class=" content row mt-4" *ngIf="cards.length > 0" style="width: 90%;margin: auto;">
+<div class=" content row mt-4" *ngIf="cards?.length > 0" style="width: 90%;margin: auto;">
     <div class="col-md-12" *ngFor="let card of cards" style="padding: 0px 20px;">
       <div class="card horizontal-card">
         <div class="row no-gutters">
           <div class="col-md-2">
-            <img class="card-img" [src]="card.image" alt="Card image" height="auto" />
+            <img class="card-img" [src]="'data:image/png;base64,' + card.image" alt="Card image" height="auto" />
           </div>
           <div class="col-md-7">
             <div class="card-body">
@@ -12,7 +12,7 @@
             </div>
           </div>
           <div class="col-md-3 d-flex justify-content-center align-items-center">
-            <button class="btn-simple custom-button" (click)="repost()">Repost</button>
+            <button class="btn-simple custom-button" (click)="repost(card)">Repost</button>
           </div>
         </div>
       </div>

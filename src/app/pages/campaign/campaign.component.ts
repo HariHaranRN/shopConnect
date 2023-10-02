@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-campaign',
@@ -8,21 +8,29 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CampaignComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private service: ApiService) { }
 
 
   cards: any[];
 
-  repost(){
-    console.log("repost");
+  repost(post){
+    const payload = {
+      shopId: "32266d51-2691-4859-bab5-f6a7245390ba",
+      title: post.title,
+      description: post.content,
+      adStream: post.image,
+      publishedDate: new Date()
+    }
+    this.service.addPost(payload).subscribe((data)=> {
+      console.log(data)
+    })
   }
+
   ngOnInit(): void {
-    const apiUrl = 'https://2irz42a5nj.execute-api.us-east-1.amazonaws.com/campaign/shopId/32266d51-2691-4859-bab5-f6a7245390ba';
-  
-    this.http.get<any[]>(apiUrl).subscribe(
-      (data) => {
+    this.service.getCampaign().subscribe(
+      (data: Array<any>) => {
         this.cards = data.map((item) => ({
-          image: `data:image/png;base64,${item.adStream}`,
+          image: item.adStream,
           title: item.title,
           content: item.description,
         }));
@@ -32,7 +40,5 @@ export class CampaignComponent implements OnInit {
       }
     );
   }
-  
-  
 
 }
