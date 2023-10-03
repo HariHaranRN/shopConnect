@@ -15,12 +15,13 @@
     </div>
   </div>
 
-  <div class="row mt-4" *ngIf="cards.length > 0">
+  <div class="row mt-4" *ngIf="cards.length > 0" style="justify-content: center;">
+    
     <div class="col-md-4" *ngFor="let card of cards">
       <div class="card" >
         <img
           class="card-img-top"
-          [src]="card.image"
+          [src]="'data:image/png;base64,' + card.image"
           alt="Card image cap"
           height="230px"
         />
