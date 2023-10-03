@@ -13,14 +13,21 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  addPost(payload:any) {
-    const headers = new HttpHeaders();
-    headers.append('Access-Control-Allow-Origin', '*');
-    return this.http.post(`${this.url + 'campaign'}`, JSON.stringify(payload), {headers});
-  }
-
   getCampaign() {
     return this.http.get(`${this.url + 'campaign/shopId/' +this.shopId}`)
+  }
+  
+  addPost(body:any) {
+    const headers = new HttpHeaders();
+    headers.append('Access-Control-Allow-Origin', '*');
+    return this.http.post(`${this.url}campaign`, body, {headers});
+  }
+
+  offerGenerate(body) { 
+    const headers = new HttpHeaders()
+      .set('Access-Control-Allow-Origin', '*')
+      .set('Content-Type', 'application/json');
+    return this.http.post(`${this.url}generate/offer`, body, { headers });
   }
 
 }

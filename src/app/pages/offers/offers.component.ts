@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
+import { ApiService } from "src/app/service/api.service";
 
 @Component({
   selector: "app-offers",
@@ -7,7 +8,7 @@ import { NgbActiveModal, NgbModal } from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ["./offers.component.scss"],
 })
 export class OffersComponent implements OnInit {
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, private service: ApiService) {}
 
   ngOnInit(): void {}
   prompt: string = "";
@@ -15,7 +16,10 @@ export class OffersComponent implements OnInit {
   cardsGenerated: boolean = false;
 
   generateCards() {
-    console.log("received prompt ", prompt);
+    this.service.offerGenerate({content: this.prompt}).subscribe((data)=> {
+      console.log(data)
+    })
+    console.log("received prompt ", this.prompt);
     // [TODO] fetch actual data from ai
     this.cards = [
       {
